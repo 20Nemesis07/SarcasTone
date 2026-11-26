@@ -1,0 +1,45 @@
+{
+  "source_count": 690,
+  "valid": 690,
+  "class_counts": {
+    "1": 345,
+    "0": 345
+  },
+  "speakers": {
+    "SHELDON": 89,
+    "PENNY": 34,
+    "HOWARD": 47,
+    "LEONARD": 34,
+    "RAJ": 26,
+    "PERSON": 45,
+    "BERNADETTE": 11,
+    "AMY": 17,
+    "PERSON3": 1,
+    "PERSON1": 4,
+    "CHANDLER": 158,
+    "ROSS": 38,
+    "MONICA": 29,
+    "JOEY": 36,
+    "RACHEL": 32,
+    "PHOEBE": 35,
+    "DOROTHY": 39,
+    "ROSE": 1,
+    "MEMBER-GIRL": 5,
+    "MODERATOR": 7,
+    "MEMBER-BOY": 2
+  },
+  "excluded": [],
+  "duplicate_transcripts": {
+    "really": 3,
+    "no": 4,
+    "yeah": 5,
+    "what": 2,
+    "thank you": 2,
+    "uh huh": 2,
+    "okay": 3,
+    "hey": 3,
+    "i can see it from right here it ll cost you one husband": 2,
+    "nooo": 2
+  },
+  "emotion_matches": 682
+}

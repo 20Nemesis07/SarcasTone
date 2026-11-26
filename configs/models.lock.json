@@ -1,0 +1,94 @@
+{
+  "text": {
+    "repo": "distilbert/distilbert-base-cased",
+    "revision": "6ea81172465e8b0ad3fddeed32b986cdcdcffcf0",
+    "files": {
+      "config.json": {
+        "size": 465,
+        "digest": "227e2cfd700ac434d93dd73b4d0ea417b7e6c063"
+      },
+      "tokenizer.json": {
+        "size": 435797,
+        "digest": "1ab2a0d23e5a032b6dcd6a3d0976c2af4d2c27f8"
+      },
+      "tokenizer_config.json": {
+        "size": 49,
+        "digest": "2ba5de7675473164e07f3b3531748c9a6f113a2c"
+      },
+      "vocab.txt": {
+        "size": 213450,
+        "digest": "2ea941cc79a6f3d7985ca6991ef4f67dad62af04"
+      },
+      "model.safetensors": {
+        "size": 263260784,
+        "digest": "64080c2b1998c3bd1214311ab9f1e97b40052fa81d508b8b534a936c4ba1626b"
+      }
+    }
+  },
+  "sentiment": {
+    "repo": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "revision": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+    "files": {
+      "config.json": {
+        "size": 929,
+        "digest": "baae943f01ad3371bc9d543de3229512dfe27cb8"
+      },
+      "special_tokens_map.json": {
+        "size": 239,
+        "digest": "2ea7ad0e45a9d1d1591782ba7e29a703d0758831"
+      },
+      "vocab.json": {
+        "size": 898822,
+        "digest": "0a39732b2d8be8e493cab3da68b68cc3e28221de"
+      },
+      "merges.txt": {
+        "size": 456318,
+        "digest": "226b0752cac7789c48f0cb3ec53eda48b7be36cc"
+      },
+      "pytorch_model.bin": {
+        "size": 501045531,
+        "digest": "4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae"
+      }
+    }
+  },
+  "emotion": {
+    "repo": "superb/wav2vec2-base-superb-er",
+    "revision": "441a7599c3b22107314dcbd9166621c5c83f2cc5",
+    "files": {
+      "config.json": {
+        "size": 2153,
+        "digest": "7a277348ce4faf10d8573a7c21b861f25729a397"
+      },
+      "preprocessor_config.json": {
+        "size": 215,
+        "digest": "10f6def8c83d70a2b087a567dcf523b75152a80b"
+      },
+      "pytorch_model.bin": {
+        "size": 378361105,
+        "digest": "dac0f46128deec048751ce33eb1a9caecb570904d3d6cf732d6ec345cd6c2e1b"
+      }
+    }
+  },
+  "asr": {
+    "repo": "Systran/faster-whisper-tiny.en",
+    "revision": "0d3d19a32d3338f10357c0889762bd8d64bbdeba",
+    "files": {
+      "config.json": {
+        "size": 2317,
+        "digest": "4065bb3bed375b176d5465be117d2d202e210434"
+      },
+      "tokenizer.json": {
+        "size": 2128466,
+        "digest": "15d7bdf9ba25718ca2504eec6a8f02bc55af0a6a"
+      },
+      "vocabulary.txt": {
+        "size": 422309,
+        "digest": "ee695b8d3e3c10d488304e04468efec4ca27554a"
+      },
+      "model.bin": {
+        "size": 75537502,
+        "digest": "1a5afae06a4db91c975c9a9d78be5cc110ee4ea022ad57d55492e4550e936b2a"
+      }
+    }
+  }
+}

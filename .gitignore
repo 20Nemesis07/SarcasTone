@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+storage/
+datasets/
+pretrained_models/
+feature_cache/
+checkpoints/
+private/
+*.pt
+*.wav
+*.mp4
+*.zip
+.env

@@ -1,0 +1,18 @@
+{
+  "bytes": {
+    "raw_metadata": 1010714,
+    "archives": 1403183019,
+    "processed": 231710700,
+    "pretrained_models": 1222766451,
+    "feature_cache": 2685574,
+    "experiments": 196747427,
+    "environment": 2820152646
+  },
+  "total_bytes": 5878256531,
+  "free_bytes": 41947779072,
+  "ram_bytes": 12679368704,
+  "cpu": "Intel64 Family 6 Model 142 Stepping 12, GenuineIntel",
+  "logical_cpus": 8,
+  "physical_cpus": 4,
+  "python": "3.10.6"
+}

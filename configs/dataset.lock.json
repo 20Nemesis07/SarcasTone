@@ -1,0 +1,22 @@
+{
+  "sarcasm_data.json": {
+    "url": "https://raw.githubusercontent.com/soujanyaporia/MUStARD/master/data/sarcasm_data.json",
+    "sha256": "ec9533032c5f143f197cb5fa5d4b29ab9bf56a20b0dc05d5b31d052f5957d39c",
+    "size": 374629
+  },
+  "mustardpp.csv": {
+    "url": "https://raw.githubusercontent.com/cfiltnlp/MUStARD_Plus_Plus/main/mustard%2B%2B_text.csv",
+    "sha256": "b134fa60bc4d0d7ba4c08953402dd298731670b9337f8bb2bad693e1890f6e4e",
+    "size": 607957
+  },
+  "split_indices.p": {
+    "url": "https://raw.githubusercontent.com/soujanyaporia/MUStARD/master/data/split_indices.p",
+    "sha256": "2adea94590e2ab49cde5e96543c75ec4006fd1e9cbd556a82382692c8b045306",
+    "size": 28128
+  },
+  "mmsd_raw_data.zip": {
+    "url": "https://huggingface.co/datasets/MichiganNLP/MUStARD/resolve/main/mmsd_raw_data.zip",
+    "size": 1403183019,
+    "sha256": "a2e68c48b7d13c66af98900dc5119b54b3b0bf962c228d99069cb0930c3880d5"
+  }
+}

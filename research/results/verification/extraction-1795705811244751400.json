@@ -1,0 +1,18 @@
+{
+  "text": {
+    "samples": 690,
+    "seconds": 56.83214470000166
+  },
+  "audio": {
+    "samples": 690,
+    "seconds": 56.63868419999562
+  },
+  "sentiment": {
+    "samples": 690,
+    "seconds": 69.69797090000066
+  },
+  "emotion": {
+    "samples": 690,
+    "seconds": 643.0660730000018
+  }
+}

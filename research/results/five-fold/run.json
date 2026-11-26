@@ -1,0 +1,55 @@
+{
+  "protocol": "official",
+  "training": {
+    "seed": 42,
+    "device": "cpu",
+    "threads": 3,
+    "batch": 32,
+    "epochs": 45,
+    "patience": 8,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "dropout": 0.25,
+    "width": 48
+  },
+  "features": {
+    "text": {
+      "version": 1,
+      "branch": "text",
+      "dim": 768,
+      "model": "6ea81172465e8b0ad3fddeed32b986cdcdcffcf0",
+      "tokens": 128,
+      "context": false
+    },
+    "audio": {
+      "version": 1,
+      "branch": "audio",
+      "dim": 44,
+      "rate": 16000
+    },
+    "sentiment": {
+      "version": 1,
+      "branch": "sentiment",
+      "dim": 3,
+      "model": "3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7",
+      "tokens": 128
+    },
+    "emotion": {
+      "version": 1,
+      "branch": "emotion",
+      "dim": 4,
+      "model": "441a7599c3b22107314dcbd9166621c5c83f2cc5",
+      "rate": 16000
+    }
+  },
+  "dataset": "0ddfb69b57312719273df5c31d12fac91f7ee329bd5a2a7b8f2e71a0e4328dc7",
+  "split_hash": "18f5ceef100c9335d18df450109dd7b36f20e6fe8d364cb90dbe5ac8fca9be0d",
+  "format": 2,
+  "python": "3.10.6",
+  "versions": {
+    "torch": "2.7.1+cpu",
+    "scikit-learn": "1.7.1",
+    "numpy": "1.26.4",
+    "transformers": "4.53.3"
+  }
+}

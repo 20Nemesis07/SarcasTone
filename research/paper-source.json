@@ -1,0 +1,50 @@
+[
+  [
+    "I. Introduction and motivation",
+    "A speaker can praise an inconvenient outcome while conveying irritation through timing or vocal emphasis. Classifying the words alone removes the delivery that listeners heard. SarcasTone asks whether explicit affect comparisons improve sarcasm detection after accounting for what a conventional multimodal classifier can already learn. The engineering objective is reproducible training and a working microphone demonstration on a CPU laptop."
+  ],
+  [
+    "II. Related work and research gap",
+    "Castro et al. introduced MUStARD for multimodal sarcasm detection [1]. Ray et al. extended the corpus and annotated explicit and implicit emotion, valence, arousal and sarcasm type [2]. Arevalo et al. learned input-dependent modality gates [3], and Pan et al. modeled intra- and inter-modality incongruity in image–text sarcasm [4]. Recent work evaluates compact heads on frozen multimodal representations [5]. These precedents motivate a narrower question: can a small, inspectable affect comparison add useful evidence to a CPU-trained text–prosody gate on a matched protocol? Chen et al. found that pitch and pause heuristics can produce false positives in audio-language models [9]. We therefore inspect sincere examples with expressive delivery as well as missed sarcasm."
+  ],
+  [
+    "III. Problem and data",
+    "For utterance i, the inputs are target transcript xi and waveform ai. The outcome yi is a binary corpus judgment of sarcasm. The primary benchmark comprises 345 sarcastic and 345 non-sarcastic utterances across four sitcom sources. We preserve the authors’ sample identifiers, original wording, speakers and optional context. MUStARD++ contributes verified surface-emotion labels for an optional auxiliary task. Its additional scenes never enter the primary benchmark as independent examples."
+  ],
+  [
+    "IV. Signal and text processing",
+    "FFmpeg extracts the target audio stream as mono 16 kHz PCM. Forty-millisecond frames spaced 10 ms apart yield autocorrelation pitch, RMS amplitude, spectral descriptors, voicing/energy activity estimates and 13 MFCC means and standard deviations. Relative frame energy estimates pauses. Laughter and mixed speakers remain potential confounds. A cased DistilBERT encoder [6] embeds the target. Attention-mask-aware mean pooling excludes padding. All 44 acoustic and 768 semantic values are computed with the same functions at training and inference."
+  ],
+  [
+    "V. Affect representations",
+    "The frozen CardiffNLP classifier, based on Twitter-domain representations [7], estimates negative, neutral and positive textual sentiment. It can itself be affected by ironic wording. The SUPERB emotion model [8] estimates neutral, happy, angry and sad delivery from audio. The compatible voice-valence vector is v = (p_angry + p_sad, p_neutral, p_happy). This transparent mapping discards arousal and collapses distinct negative emotions. Neither modality classifier measures intention directly."
+  ],
+  [
+    "VI. Incongruity-aware gated fusion",
+    "Projected text T and audio A each have 48 coordinates. For sentiment s and voice valence v, define d as the concatenation of |s − v|, s ⊙ v, 1 − cos(s,v), s_positive v_negative and s_negative v_positive. Its nine coordinates distinguish the direction of affect mismatch and retain agreement information. A vector gate g = sigmoid(Wg[T,A] + bg) yields F = g ⊙ T + (1 − g) ⊙ A. A GELU MLP with dropout receives [F,d] and returns a logit. The projections, gate and output head learn through binary cross-entropy. We keep every pretrained encoder frozen."
+  ],
+  [
+    "VII. Experimental setup and controls",
+    "All primary comparisons share the published five outer MUStARD test folds. Identical normalized transcripts or identical decoded audio are purged from the development side of each boundary. A group-stratified inner validation partition selects the checkpoint by positive-class F1. We separately hold out Friends and remove speaker-name overlap from development. Training-only statistics scale input features. AdamW uses a 0.001 initial learning rate, 0.01 weight decay, batch size 32, dropout 0.25 and patience of eight epochs. Seed 42 and a 0.50 decision threshold are fixed."
+  ],
+  [
+    "VIII. Baselines and ablations",
+    "Controls include TF-IDF logistic regression, an acoustic SVM, text-only and speech-only neural heads, and learned concatenation. A gated head with no affect comparisons isolates fusion. A concatenated head with the nine comparisons isolates the explicit affect inputs. Further retrained variants remove sentiment, emotion or individual acoustic groups. The auxiliary option adds a 0.2-weight surface-emotion loss only for verified training labels."
+  ],
+  [
+    "IX. Error analysis and explanations",
+    "False positives conflate sincere speech with sarcasm, whereas false negatives miss intended irony. The companion analysis lists real decisions by fold and ID and identifies examples where the proposed model corrects or introduces an error relative to text alone. Live feature perturbation replaces normalized coordinates with training means or zeros the explicit comparison vector. A signed score change measures sensitivity to that intervention. Correlations and out-of-distribution substitutions preclude a causal interpretation."
+  ],
+  [
+    "X. Real-world generalization",
+    "The separate local protocol records consenting participants, paired utterances, intended delivery, recording conditions and optional self-described accent. The deployed fold is fixed in advance. Keep entire pairs and all speakers outside development. Report all decisions, including unsuccessful pairs, and distinguish manual transcripts from ASR. Volunteer results are pending consented observations. Performance on television cannot establish reliability on Indian English or other everyday speech."
+  ],
+  [
+    "XI. Discussion, limitations and future scope",
+    "Speaker and show identity, laugh tracks, recording gain, stereotyped delivery and imperfect emotion labels provide alternative explanations for observed differences. The Friends holdout changes multiple factors simultaneously. Proxy-defined agreement groups also condition on the upstream classifiers’ errors. Future studies should add independent modality-specific affect annotations, paired speaker-level uncertainty estimates, repeat training seeds and evaluate calibration on separate development data."
+  ],
+  [
+    "References",
+    "[1] S. Castro et al., “Towards Multimodal Sarcasm Detection (An Obviously Perfect Paper),” ACL, 2019. doi:10.18653/v1/P19-1455.\n[2] A. Ray et al., “A Multimodal Corpus for Emotion Recognition in Sarcasm,” LREC, 2022. aclanthology.org/2022.lrec-1.756/.\n[3] J. Arevalo et al., “Gated Multimodal Units for Information Fusion,” 2017. arXiv:1702.01992.\n[4] H. Pan et al., “Modeling Intra and Inter-modality Incongruity for Multi-Modal Sarcasm Detection,” Findings of EMNLP, 2020. doi:10.18653/v1/2020.findings-emnlp.124.\n[5] A. Gurjar and N. Krishnaswamy, “Scale Is All You Need: Analyzing Modality Interaction and Speaker Intent Without Fine-Tuning,” EACL Student Research Workshop, 2026. aclanthology.org/2026.eacl-srw.36/.\n[6] V. Sanh et al., “DistilBERT, a Distilled Version of BERT,” 2019. arXiv:1910.01108.\n[7] D. Loureiro et al., “TimeLMs: Diachronic Language Models from Twitter,” ACL System Demonstrations, 2022. doi:10.18653/v1/2022.acl-demo.25.\n[8] S. Yang et al., “SUPERB: Speech Processing Universal PERformance Benchmark,” Interspeech, 2021. doi:10.21437/Interspeech.2021-1775.\n[9] Y. Chen et al., When Models Hear What They Expect: Diagnosing Prosodic Heuristics in Multimodal Sarcasm Detection, Findings of EMNLP, 2026. aclanthology.org/2026.findings-emnlp.1464/."
+  ]
+]

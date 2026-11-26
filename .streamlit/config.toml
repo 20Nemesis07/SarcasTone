@@ -1,0 +1,12 @@
+[server]
+address = "localhost"
+maxUploadSize = 24
+[browser]
+gatherUsageStats = false
+[theme]
+base = "dark"
+primaryColor = "#14B8A6"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#161B22"
+textColor = "#F1F5F9"
+font = "sans serif"

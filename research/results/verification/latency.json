@@ -1,0 +1,24 @@
+{
+  "sample": "1_60",
+  "duration": 4.0106875,
+  "runs": [
+    {
+      "take": 1,
+      "total_seconds": 13.126949500001501,
+      "score": 0.6148240566253662,
+      "cached_models": 1
+    },
+    {
+      "take": 2,
+      "total_seconds": 3.103352799997083,
+      "score": 0.6148240566253662,
+      "cached_models": 0
+    },
+    {
+      "take": 3,
+      "total_seconds": 3.2012157999997726,
+      "score": 0.6148240566253662,
+      "cached_models": 0
+    }
+  ]
+}

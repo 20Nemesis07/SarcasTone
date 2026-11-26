@@ -1,0 +1,55 @@
+{
+  "id": "1_60",
+  "reference": "It's just a privilege to watch your mind at work.",
+  "transcription": "It's just a privilege to watch your mind at work.",
+  "duration": 4.0106875,
+  "asr_seconds": 1.860634900003788,
+  "analysis_seconds": 16.22914380000293,
+  "total_seconds": 18.230919599998742,
+  "manual_scores": {
+    "text": 0.6137743592262268,
+    "speech": 0.5541805624961853,
+    "concat": 0.5839923620223999,
+    "proposed": 0.6148240566253662
+  },
+  "asr_scores": {
+    "text": 0.6137743592262268,
+    "speech": 0.5541805624961853,
+    "concat": 0.5839923620223999,
+    "proposed": 0.6148240566253662
+  },
+  "label": 1,
+  "loader_seconds": {
+    "text": 0.3571211999951629,
+    "sentiment": 0.7344551999995019,
+    "emotion": 0.33965490000264253
+  },
+  "process_peak_bytes": 1789849600,
+  "zero_cache_misses": true,
+  "network_blocked": true,
+  "all_four_match_offline_test": true,
+  "paired_uploads": [
+    {
+      "id": "2_549",
+      "label": 0,
+      "predictions": {
+        "text": 0.2890719473361969,
+        "speech": 0.0947892814874649,
+        "concat": 0.4255528748035431,
+        "proposed": 0.1945601999759674
+      },
+      "analysis_s": 2.411513200000627
+    },
+    {
+      "id": "2_209",
+      "label": 1,
+      "predictions": {
+        "text": 0.2890719473361969,
+        "speech": 0.31755369901657104,
+        "concat": 0.44293561577796936,
+        "proposed": 0.22251993417739868
+      },
+      "analysis_s": 2.2908838000003016
+    }
+  ]
+}
